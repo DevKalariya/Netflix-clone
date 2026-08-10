@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="Netflix.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-left">
+        <div class="logo">NETFLIX</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tv">TV Shows</a>
+            <a href="#movies">Movies</a>
+            <a href="#popular">New & Popular</a>
+            <a href="#mylist">My List</a>
+        </nav>
+    </div>
+    <div class="nav-right">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search">
+            <button id="searchBtn">🔍</button>
+        </div>
+        <span class="notification">🔔</span>
+        <div class="profile"><span>👤</span><span class="arrow">▼</span></div>
+    </div>
+</header>
+
+<main id="home">
+<section class="hero">
+    <div class="hero-content">
+        <p class="series">NETFLIX ORIGINAL</p>
+        <h1>STRANGER THINGS</h1>
+        <div class="hero-info"><span>2026</span><span>16+</span><span>4 Seasons</span><span>HD</span></div>
+        <p class="hero-description">When a young boy disappears, his friends and family uncover a mystery involving secret experiments, terrifying supernatural forces and a strange girl with extraordinary powers.</p>
+        <div class="hero-buttons">
+            <button class="play-btn" onclick="playMovie('Stranger Things')">▶ Play</button>
+            <button class="info-btn" onclick="showInfo('Stranger Things')">ⓘ More Info</button>
+        </div>
+    </div>
+</section>
+
+<section class="movie-section" id="popular">
+    <div class="section-title"><h2>Popular on Netflix</h2><button onclick="showAll('popular')">See All</button></div>
+    <div class="movie-row">
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Avatar"><div class="movie-overlay"><h3>Avatar</h3><button onclick="playMovie('Avatar')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool"><div class="movie-overlay"><h3>Deadpool</h3><button onclick="playMovie('Deadpool')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer"><div class="movie-overlay"><h3>Oppenheimer</h3><button onclick="playMovie('Oppenheimer')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" alt="Shawshank Redemption"><div class="movie-overlay"><h3>The Shawshank Redemption</h3><button onclick="playMovie('The Shawshank Redemption')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8YFL5QQVPy3AgrEQwQXK0a2JrVx.jpg" alt="Inception"><div class="movie-overlay"><h3>Inception</h3><button onclick="playMovie('Inception')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="Harry Potter"><div class="movie-overlay"><h3>Harry Potter</h3><button onclick="playMovie('Harry Potter')">▶</button></div></div>
+    </div>
+</section>
+
+<section class="movie-section" id="movies">
+    <div class="section-title"><h2>Trending Now</h2><button onclick="showAll('trending')">See All</button></div>
+    <div class="movie-row">
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="Godfather"><div class="movie-overlay"><h3>The Godfather</h3><button onclick="playMovie('The Godfather')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers"><div class="movie-overlay"><h3>Avengers</h3><button onclick="playMovie('Avengers')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Wonder Woman"><div class="movie-overlay"><h3>Wonder Woman</h3><button onclick="playMovie('Wonder Woman')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="Joker"><div class="movie-overlay"><h3>Joker</h3><button onclick="playMovie('Joker')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg" alt="Black Panther"><div class="movie-overlay"><h3>Black Panther</h3><button onclick="playMovie('Black Panther')">▶</button></div></div>
+    </div>
+</section>
+
+<section class="movie-section" id="tv">
+    <div class="section-title"><h2>Netflix Originals</h2><button onclick="showAll('originals')">See All</button></div>
+    <div class="movie-row">
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg" alt="Stranger Things"><div class="movie-overlay"><h3>Stranger Things</h3><button onclick="playMovie('Stranger Things')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/5qQvY6n7M8H9J0K1L2P3Q4R5.jpg" alt="Wednesday"><div class="movie-overlay"><h3>Wednesday</h3><button onclick="playMovie('Wednesday')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/7a7b2n3m4c5d6e7f8g9h0.jpg" alt="Money Heist"><div class="movie-overlay"><h3>Money Heist</h3><button onclick="playMovie('Money Heist')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8H9J0K1L2M3N4P5Q6R7S8T9.jpg" alt="Lucifer"><div class="movie-overlay"><h3>Lucifer</h3><button onclick="playMovie('Lucifer')">▶</button></div></div>
+    </div>
+</section>
+
+<section class="movie-section" id="mylist">
+    <div class="section-title"><h2>My List</h2></div>
+    <div class="movie-row">
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Wonder Woman"><div class="movie-overlay"><h3>Wonder Woman</h3><button onclick="playMovie('Wonder Woman')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="Joker"><div class="movie-overlay"><h3>Joker</h3><button onclick="playMovie('Joker')">▶</button></div></div>
+        <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/5KCVkau1HEl7ZzfPsKAPM0sMiKc.jpg" alt="Black Panther"><div class="movie-overlay"><h3>Black Panther</h3><button onclick="playMovie('Black Panther')">▶</button></div></div>
+    </div>
+</section>
+
+<section class="search-results" id="searchResults">
+    <div class="section-title"><h2>Search Results</h2></div>
+    <div id="resultsContainer" class="results-container"></div>
+</section>
+</main>
+
+<footer>
+    <div class="footer-social"><span>Facebook</span><span>Instagram</span><span>Twitter</span><span>YouTube</span></div>
+    <div class="footer-links"><a href="#">Audio and Subtitles</a><a href="#">Media Center</a><a href="#">Privacy</a><a href="#">Contact Us</a></div>
+    <p>© 2026 Netflix Clone Project. For educational purposes only.</p>
+</footer>
+
+<div class="modal" id="infoModal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">×</button>
+        <h2 id="modalTitle">Stranger Things</h2>
+        <p id="modalText">Welcome to Netflix Clone.</p>
+        <button class="modal-play" onclick="playMovie()">▶ Play</button>
+    </div>
+</div>
+
+<script src="Netflix.js"></script>
+</body>
+</html>
